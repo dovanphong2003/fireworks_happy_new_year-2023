@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <link
+            rel="icon"
+            href="https://scontent.fhan3-5.fna.fbcdn.net/v/t1.6435-1/150507602_939683406809714_8897041513240876501_n.jpg?stp=dst-jpg_p320x320&_nc_cat=110&ccb=1-7&_nc_sid=7206a8&_nc_ohc=2PMThZ1SS4QAX-Afl2d&_nc_ht=scontent.fhan3-5.fna&oh=00_AfAosDA78Yt4tWhyAUs9s-HhMzJLY1t8MoAiHx4r7yquoA&oe=63EF3223"
+        />
+        <title>fireworks !</title>
+    </head>
+    <body>
+        <head>
+            <title>Fireworks</title>
+            <script
+                type="text/javascript"
+                src="https://code.jquery.com/jquery-2.1.3.min.js"
+            ></script>
+            <script type="text/javascript" src="jquery.fireworks.js"></script>
+            <script type="text/javascript" src="test.js"></script>
+        </head>
+        <body>
+            <h1>Chúc Mừng Năm Mới</h1>
+            <button id="on_all" style="width: 100px">On All</button>
+            <br />
+            <button id="off_all" style="width: 100px">Off All</button>
+            <hr />
+            <div
+                class="bg"
+                style="width: 100vw; height: 100vh; position: relative"
+            >
+                <div
+                    class="blue"
+                    style="
+                        width: 600px;
+                        height: 80vh;
+                        position: absolute;
+                        top: 100px;
+                    "
+                ></div>
+                <div class="red"></div>
+            </div>
+            <script>
+                const audio = new Audio(
+                    "./mixkit-firework-rockets-explosions-1722.wav"
+                );
+                audio.loop = true;
+                audio.onended = function () {
+                    audio.play();
+                };
+
+                const audio2 = new Audio(
+                    "./Tieng-phao-hoa-no-tren-bau-troi-www_tiengdong_com.mp3"
+                );
+                audio2.loop = true;
+                audio2.onended = function () {
+                    audio2.play();
+                };
+
+                const audio3 = new Audio("./firework-show-short-64657.mp3");
+                audio3.loop = true;
+                audio3.onended = function () {
+                    audio3.play();
+                };
+
+                const audio4 = new Audio(
+                    "./mixkit-fast-rocket-whoosh-1714.wav"
+                );
+                audio4.loop = true;
+                audio4.onended = function () {
+                    audio4.play();
+                };
+
+                document.querySelectorAll("button").forEach((element) => {
+                    element.addEventListener("click", function () {
+                        if (element.id.slice(0, 3) == "on_") {
+                            audio.play();
+                            audio2.play();
+                            setTimeout(() => {
+                                audio3.play();
+                            }, 2000);
+                            audio4.play();
+                            setTimeout(() => {
+                                audio4.pause();
+                            }, 8000);
+                        } else if (element.id.slice(0, 3) == "off") {
+                            setTimeout(() => {
+                                audio.pause();
+                                audio2.pause();
+                                audio3.pause();
+                                audio4.pause();
+                            }, 4000);
+                        }
+                    });
+                });
+                var text = document.querySelector("h1"); //*Ðiền chữ
+                var speed = 80; // Tốc độ
+                var hex = new Array(
+                    "00",
+                    "14",
+                    "28",
+                    "3C",
+                    "50",
+                    "64",
+                    "78",
+                    "8C",
+                    "A0",
+                    "B4",
+                    "C8",
+                    "DC",
+                    "F0"
+                );
+                var r = 1;
+                var g = 1;
+                var b = 1;
+                var seq = 1;
+                function changetext() {
+                    rainbow = "#" + hex[r] + hex[g] + hex[b];
+                    text.style.color = rainbow;
+                }
+                function change() {
+                    if (seq == 6) {
+                        b--;
+                        if (b == 0) seq = 1;
+                    }
+                    if (seq == 5) {
+                        r++;
+                        if (r == 12) seq = 6;
+                    }
+                    if (seq == 4) {
+                        g--;
+                        if (g == 0) seq = 5;
+                    }
+                    if (seq == 3) {
+                        b++;
+                        if (b == 12) seq = 4;
+                    }
+                    if (seq == 2) {
+                        r--;
+                        if (r == 0) seq = 3;
+                    }
+                    if (seq == 1) {
+                        g++;
+                        if (g == 12) seq = 2;
+                    }
+                    changetext();
+                }
+                function starteffect() {
+                    if (document.all || document.getElementById)
+                        flash = setInterval("change()", speed);
+                }
+                starteffect();
+            </script>
+            <audio controls autoplay style="display: none">
+                <source
+                    src="./happy new year (không lời).mp3"
+                    type="audio/mpeg"
+                />
+            </audio>
+        </body>
+    </body>
+</html>
