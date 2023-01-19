@@ -58,6 +58,40 @@
             ></div>
             <script>
                 /* lấy phần tử modal */
+                var modal = document.getElementById("myModal");
+
+                /* thiết lập nút đóng modal */
+                var span = document.getElementsByClassName("close")[0];
+                /* Sẽ hiển thị modal khi người dùng click vào */
+                setTimeout(() => {
+                    modal.style.display = "block";
+                }, 1000);
+                /* Sẽ đóng modal khi nhấn dấu x */
+                span.onclick = function () {
+                    if (
+                        !document
+                            .querySelector(".modal")
+                            .classList.contains("fade-out")
+                    ) {
+                        document
+                            .querySelector(".modal")
+                            .classList.add("fade-out");
+                    }
+                    setTimeout(() => {
+                        audio5.play();
+                        modal.style.display = "none";
+                        document
+                            .querySelector(".modal")
+                            .classList.remove("fade-out");
+                    }, 2500);
+                };
+
+                // /*Sẽ đóng modal khi nhấp ra ngoài màn hình*/
+                // window.onclick = function (event) {
+                //     if (event.target == modal) {
+                //         modal.style.display = "none";
+                //     }
+                // };
 
                 const audio = new Audio(
                     "./jquery.fireworks-master/jquery.fireworks-master/mixkit-firework-rockets-explosions-1722.wav"
