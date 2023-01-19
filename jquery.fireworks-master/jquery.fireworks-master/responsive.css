@@ -1,0 +1,63 @@
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+        display: block;
+        top: 60px;
+        width: 100%;
+        text-align: center;
+    }
+
+    body {
+        background-image: url(./imgPhone.jpg);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 600px) {
+    /* For portrait layouts only */
+    h1 {
+        font-size: 24px;
+        display: block;
+        top: 60px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .modal-content {
+        background-image: url(./imgPhone.jpg);
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+    /* For landscape layouts only */
+    h1 {
+        font-size: 34px;
+        display: block;
+        top: 60px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    /* For landscape layouts only */
+    h1 {
+        font-size: 40px;
+        display: block;
+        top: 60px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1199px) {
+    /* For landscape layouts only */
+    h1 {
+        font-size: 30px;
+        top: 0;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

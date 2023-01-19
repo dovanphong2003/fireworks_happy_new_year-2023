@@ -9,12 +9,26 @@
             href="./jquery.fireworks-master/jquery.fireworks-master/style.css"
         />
         <link
+            rel="stylesheet"
+            href="./jquery.fireworks-master/jquery.fireworks-master/responsive.css"
+        />
+        <link
             rel="icon"
             href="https://scontent.fhan3-5.fna.fbcdn.net/v/t1.6435-1/150507602_939683406809714_8897041513240876501_n.jpg?stp=dst-jpg_p320x320&_nc_cat=110&ccb=1-7&_nc_sid=7206a8&_nc_ohc=2PMThZ1SS4QAX-Afl2d&_nc_ht=scontent.fhan3-5.fna&oh=00_AfAosDA78Yt4tWhyAUs9s-HhMzJLY1t8MoAiHx4r7yquoA&oe=63EF3223"
         />
         <title>fireworks !</title>
     </head>
     <body>
+        <!-- Nút Để  Mở Modal -->
+        <!-- Modal Cho Website -->
+
+        <div id="myModal" class="modal">
+            <!-- Nội Dung Modal -->
+            <div class="modal-content">
+                <span class="close">×</span>
+                <br />
+            </div>
+        </div>
         <head>
             <title>Fireworks</title>
             <script
@@ -32,26 +46,19 @@
         </head>
         <body>
             <h1>Chúc Mừng Năm Mới</h1>
+            <button class="on_music" style="width: 100px">On music</button>
             <button id="on_all" style="width: 100px">On All</button>
             <br />
+            <button class="off_music" style="width: 100px">Off music</button>
             <button id="off_all" style="width: 100px">Off All</button>
             <hr />
             <div
                 class="bg"
                 style="width: 100vw; height: 100vh; position: relative"
-            >
-                <div
-                    class="blue"
-                    style="
-                        width: 600px;
-                        height: 80vh;
-                        position: absolute;
-                        top: 100px;
-                    "
-                ></div>
-                <div class="red"></div>
-            </div>
+            ></div>
             <script>
+                /* lấy phần tử modal */
+
                 const audio = new Audio(
                     "./jquery.fireworks-master/jquery.fireworks-master/mixkit-firework-rockets-explosions-1722.wav"
                 );
@@ -84,6 +91,25 @@
                     audio4.play();
                 };
 
+                const audio5 = new Audio(
+                    "./jquery.fireworks-master/jquery.fireworks-master/happy new year (không lời).mp3"
+                );
+                audio5.loop = true;
+                audio5.onended = function () {
+                    audio5.play();
+                };
+
+                document
+                    .querySelector(".on_music")
+                    .addEventListener("click", function () {
+                        audio5.play();
+                    });
+
+                document
+                    .querySelector(".off_music")
+                    .addEventListener("click", function () {
+                        audio5.pause();
+                    });
                 document.querySelectorAll("button").forEach((element) => {
                     element.addEventListener("click", function () {
                         if (element.id.slice(0, 3) == "on_") {
@@ -164,12 +190,6 @@
                 }
                 starteffect();
             </script>
-            <audio controls autoplay style="display: none">
-                <source
-                    src="./jquery.fireworks-master/jquery.fireworks-master/happy new year (không lời).mp3"
-                    type="audio/mpeg"
-                />
-            </audio>
         </body>
     </body>
 </html>

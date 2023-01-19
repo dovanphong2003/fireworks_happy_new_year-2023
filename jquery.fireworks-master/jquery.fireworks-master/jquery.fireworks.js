@@ -264,7 +264,7 @@ TODO:
         Particle.apply(this, [
             {
                 x:
-                    (Math.random() * data.canvas.width * 6) / 3 +
+                    (Math.random() * data.canvas.width * 2) / 3 +
                     data.canvas.width / 6,
                 y: data.canvas.height,
             },
