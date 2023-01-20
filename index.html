@@ -263,9 +263,14 @@
                     .addEventListener("click", function () {
                         audio5.pause();
                     });
+                let checkOnOff = false;
                 document.querySelectorAll("button").forEach((element) => {
                     element.addEventListener("click", function () {
-                        if (element.id.slice(0, 3) == "on_") {
+                        if (
+                            element.id.slice(0, 3) == "on_" &&
+                            checkOnOff == false
+                        ) {
+                            checkOnOff = true;
                             audio.play();
                             audio2.play();
                             setTimeout(() => {
@@ -275,7 +280,11 @@
                             setTimeout(() => {
                                 audio4.pause();
                             }, 8000);
-                        } else if (element.id.slice(0, 3) == "off") {
+                        } else if (
+                            element.id.slice(0, 3) == "off" &&
+                            checkOnOff == true
+                        ) {
+                            checkOnOff = false;
                             setTimeout(() => {
                                 audio.pause();
                                 audio2.pause();
