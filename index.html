@@ -45,18 +45,124 @@
             ></script>
         </head>
         <body>
-            <h1>Chúc Mừng Năm Mới</h1>
+            <h1>❤️Chúc Mừng Năm Mới❤️</h1>
             <button class="on_music" style="width: 100px">On music</button>
             <button id="on_all" style="width: 100px">On All</button>
             <br />
             <button class="off_music" style="width: 100px">Off music</button>
             <button id="off_all" style="width: 100px">Off All</button>
             <hr />
+
+            <img
+                class="maew"
+                src="./jquery.fireworks-master/jquery.fireworks-master/meaw2.png"
+                alt="maew maew"
+            />
+
             <div
                 class="bg"
-                style="width: 100vw; height: 100vh; position: relative"
+                style="
+                    width: 100vw;
+                    height: 100vh;
+                    position: relative;
+                    z-index: 5;
+                "
             ></div>
+            <style type="text/css">
+                * {
+                    cursor: url(https://cur.cursors-4u.net/toons/too-8/too741.cur),
+                        auto !important;
+                }</style
+            ><a
+                href="https://www.cursors-4u.com/cursor/2009/01/31/marie-the-aristocats-3.html"
+                target="_blank"
+                title="Marie - The Aristocats 3"
+                ><img
+                    src="https://cur.cursors-4u.net/cursor.png"
+                    border="0"
+                    alt="Marie - The Aristocats 3"
+                    style="position: absolute; top: 0px; right: 0px"
+            /></a>
             <script>
+                console.log(screen.width);
+                let hoverWidth;
+                let hoverHeight;
+                if (screen.width >= 1200) {
+                    hoverHeight = 600;
+                    hoverWidth = 1000;
+                } else if (screen.width < 1200 && screen.width >= 769) {
+                    hoverHeight = 600;
+                    hoverWidth = 700;
+                } else if (screen.width < 769 && screen.width >= 481) {
+                    hoverHeight = 660;
+                    hoverWidth = 450;
+                } else if (screen.width < 481) {
+                    hoverHeight = 530;
+                    hoverWidth = 300;
+                }
+                setTimeout(() => {
+                    alert(
+                        "lưu ý: khi vào website bằng pc,laptop,tablet, bạn sẽ có cơ hội gặp mèo Ma Thuật😁"
+                    );
+                }, 500);
+                const hover = function () {
+                    let maew = document.querySelector(".maew");
+                    let top = Math.floor(Math.random() * Number(hoverHeight));
+                    let left = Math.floor(Math.random() * Number(hoverWidth));
+                    maew.style.top = top + "px";
+                    maew.style.left = left + "px";
+                    maew.style.opacity = Number(
+                        Math.random() >= 0.5
+                            ? 1
+                            : Number(Math.random() >= 0.5 ? 0.6 : 0.1)
+                    );
+                };
+                let countCatch = 0;
+                document
+                    .querySelector(".maew")
+                    .addEventListener("click", function () {
+                        if (countCatch >= 6) {
+                            alert("ẩn thân chi thuật !!!");
+                            document.querySelector(".maew").style.display =
+                                "none";
+                            setTimeout(() => {
+                                if (
+                                    document.querySelector(".maew").style
+                                        .display == "none"
+                                ) {
+                                    document.querySelector(
+                                        ".maew"
+                                    ).style.display = "block";
+                                    countCatch = 0;
+                                }
+                            }, 5000);
+                        } else {
+                            document
+                                .querySelector(".maew")
+                                .classList.add("boxshadow");
+                            alert("lá chắn 😸");
+                            setTimeout(() => {
+                                if (
+                                    document
+                                        .querySelector(".maew")
+                                        .classList.contains("boxshadow")
+                                ) {
+                                    document
+                                        .querySelector(".maew")
+                                        .classList.remove("boxshadow");
+                                }
+                            }, 1000);
+                            countCatch++;
+                        }
+                    });
+
+                document
+                    .querySelector(".maew")
+                    .addEventListener("mousemove", function () {
+                        setTimeout(() => {
+                            hover();
+                        }, 1);
+                    });
                 /* lấy phần tử modal */
                 var modal = document.getElementById("myModal");
 
@@ -166,7 +272,7 @@
                         }
                     });
                 });
-                var text = document.querySelector("h1"); //*Ðiền chữ
+                var text = document.querySelector("h1");
                 var speed = 80; // Tốc độ
                 var hex = new Array(
                     "00",

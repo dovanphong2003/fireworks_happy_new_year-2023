@@ -16,16 +16,40 @@ body {
     background-attachment: fixed;
     position: relative;
 }
+
+.maew {
+    display: block;
+    padding: 50px;
+    z-index: 100000;
+    position: fixed;
+    opacity: 0.6;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    box-shadow: 10px 10px 50px 10px rgba(63, 255, 233, 0.2),
+        inset 0px 22px 70px 4px rgba(63, 255, 233, 0.2);
+    width: 20%;
+    animation: slideup 1s;
+}
+
+.boxshadow {
+    box-shadow: 10px 10px 50px 10px rgba(47, 255, 231, 0.6),
+        inset 0px 22px 70px 4px rgba(23, 253, 226, 0.6);
+}
+
+.maew:hover {
+    opacity: 1;
+}
 /* modal.......*/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 body {
+    z-index: 1;
     font-family: "Noto Sans JP", sans-serif;
 }
 /* Thiết Lập Modal Background */
 .modal {
     display: none; /* Ẩn Mặc Định */
     position: fixed;
-    z-index: 1;
+    z-index: 100001;
     padding-top: 100px; /* Vị trí của modal */
     left: 0;
     top: 0;
@@ -34,7 +58,7 @@ body {
     overflow: auto; /* thiết lập scroll khi cần thiết */
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.6);
-    animation: fadeIn 5s;
+    animation: fadeIn 3s;
 }
 
 .fade-out {
@@ -67,6 +91,7 @@ body {
         0 16px 16px rgba(0, 0, 0, 0.12);
     outline: none;
 }
+
 /* Nội Dung Modal */
 .modal-content {
     position: relative;
@@ -109,6 +134,8 @@ h1 {
     transform: translateX(-50%);
     font-size: 40px;
     letter-spacing: 6px;
+    cursor: url(https://cur.cursors-4u.net/nature/nat-4/nat350.ani),
+        url(https://cur.cursors-4u.net/nature/nat-4/nat350.png), auto !important;
 }
 body button {
     cursor: pointer;
