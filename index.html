@@ -16,7 +16,7 @@
             rel="icon"
             href="https://scontent.fhan3-5.fna.fbcdn.net/v/t1.6435-1/150507602_939683406809714_8897041513240876501_n.jpg?stp=dst-jpg_p320x320&_nc_cat=110&ccb=1-7&_nc_sid=7206a8&_nc_ohc=2PMThZ1SS4QAX-Afl2d&_nc_ht=scontent.fhan3-5.fna&oh=00_AfAosDA78Yt4tWhyAUs9s-HhMzJLY1t8MoAiHx4r7yquoA&oe=63EF3223"
         />
-        <title>fireworks !</title>
+        <title>fireworks - 2023 🎆</title>
     </head>
     <body>
         <!-- Nút Để  Mở Modal -->
@@ -46,13 +46,12 @@
         </head>
         <body>
             <h1>❤️Chúc Mừng Năm Mới❤️</h1>
-            <button class="on_music" style="width: 100px">On music</button>
-            <button id="on_all" style="width: 100px">On All</button>
+            <button class="on_music" style="width: 120px">Bật nhạc</button>
+            <button id="on_all" style="width: 120px">Bắn Pháo hoa</button>
             <br />
-            <button class="off_music" style="width: 100px">Off music</button>
-            <button id="off_all" style="width: 100px">Off All</button>
+            <button class="off_music" style="width: 120px">Tắt nhạc</button>
+            <button id="off_all" style="width: 120px">Tắt pháo hoa</button>
             <hr />
-
             <img
                 class="maew"
                 src="./jquery.fireworks-master/jquery.fireworks-master/meaw2.png"
@@ -84,7 +83,6 @@
                     style="position: absolute; top: 0px; right: 0px"
             /></a>
             <script>
-                console.log(screen.width);
                 let hoverWidth;
                 let hoverHeight;
                 if (screen.width >= 1200) {
@@ -100,11 +98,7 @@
                     hoverHeight = 530;
                     hoverWidth = 300;
                 }
-                setTimeout(() => {
-                    alert(
-                        "lưu ý: khi vào website bằng pc,laptop,tablet, bạn sẽ có cơ hội gặp mèo Ma Thuật😁"
-                    );
-                }, 500);
+
                 const hover = function () {
                     let maew = document.querySelector(".maew");
                     let top = Math.floor(Math.random() * Number(hoverHeight));
@@ -163,12 +157,11 @@
                             hover();
                         }, 1);
                     });
-                /* lấy phần tử modal */
+
                 var modal = document.getElementById("myModal");
 
-                /* thiết lập nút đóng modal */
                 var span = document.getElementsByClassName("close")[0];
-                /* Sẽ hiển thị modal khi người dùng click vào */
+
                 setTimeout(() => {
                     modal.style.display = "block";
                 }, 1000);

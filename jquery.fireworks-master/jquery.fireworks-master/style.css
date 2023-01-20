@@ -32,8 +32,8 @@ body {
 }
 
 .boxshadow {
-    box-shadow: 10px 10px 50px 10px rgba(47, 255, 231, 0.6),
-        inset 0px 22px 70px 4px rgba(23, 253, 226, 0.6);
+    box-shadow: 10px 10px 50px 10px rgba(47, 255, 231, 0.8),
+        inset 0px 22px 70px 4px rgba(23, 253, 226, 0.8);
 }
 
 .maew:hover {
